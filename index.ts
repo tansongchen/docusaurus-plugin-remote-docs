@@ -4,6 +4,8 @@ import { join } from 'path';
 
 export type PluginOptions = _PluginOptions & { downloader: (root: string) => Promise<void> };
 
+export type Options = Partial<PluginOptions>;
+
 export default async function pluginRemoteDocs(context: LoadContext, options: PluginOptions): Promise<Plugin<LoadedContent>> {
   const plugin = await pluginContentDocs(context, options);
 
